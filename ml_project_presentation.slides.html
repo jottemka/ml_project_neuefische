@@ -15010,10 +15010,10 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Data-Challenges">Data Challenges<a class="anchor-link" href="#Data-Challenges">&#182;</a></h2><ol>
 <li>Poor data documentation</li>
-<li>Very large dataset</li>
-<li>Highly imbalanced</li>
+<li>Very large dataset: 4.4 million rows</li>
+<li>Highly imbalanced: only 7.8% fraud cases</li>
 <li>Columns with mixed data-types and out-of-range values</li>
-<li>No fraud detection before 2005</li>
+<li>No data fraud-activities before 2005</li>
 </ol>
 
 </div>
@@ -15025,19 +15025,83 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Tested-Classifiers">Tested Classifiers<a class="anchor-link" href="#Tested-Classifiers">&#182;</a></h2><ol>
-<li>KNN: long prediction time.</li>
-<li>Decision Trees: fast and very good performance with good data-cleaning.</li>
-<li>Random Forests: good performance, computational time okay.</li>
-<li>Extra Trees: okay performance, fast</li>
-<li>K-Means: fast, poor classification performance</li>
-<li>LightGBM: fast, poor classification performance.</li>
-<li>XGboost: fast, poor classification performance.</li>
-<li>Logistic Regression: fast, poor classification performance.</li>
-<li>AdaBoost: slow, poor performance.</li>
-<li>SVM: very slow.</li>
-<li>Naive Bayes Classifier: fast but poor performance.</li>
-</ol>
+<h2 id="Tested-Classifiers">Tested Classifiers<a class="anchor-link" href="#Tested-Classifiers">&#182;</a></h2><table>
+<thead><tr>
+<th><strong>Model</strong></th>
+<th><strong>Prediction Time</strong></th>
+<th><strong>Performance</strong></th>
+<th><strong>Computational Time</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KNN</td>
+<td>Long</td>
+<td>Good</td>
+<td>Okay</td>
+</tr>
+<tr>
+<td>Decision Trees</td>
+<td>Fast</td>
+<td>Excellent</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Random Forests</td>
+<td>Okay</td>
+<td>Good</td>
+<td>Okay</td>
+</tr>
+<tr>
+<td>Extra Trees</td>
+<td>Okay</td>
+<td>Average</td>
+<td>Fast</td>
+</tr>
+<tr>
+<td>K-Means</td>
+<td>Fast</td>
+<td>Poor</td>
+<td>Fast</td>
+</tr>
+<tr>
+<td>LightGBM</td>
+<td>Fast</td>
+<td>Poor</td>
+<td>Fast</td>
+</tr>
+<tr>
+<td>XGBoost</td>
+<td>Fast</td>
+<td>Poor</td>
+<td>Fast</td>
+</tr>
+<tr>
+<td>Logistic Regression</td>
+<td>Fast</td>
+<td>Poor</td>
+<td>Fast</td>
+</tr>
+<tr>
+<td>AdaBoost</td>
+<td>Slow</td>
+<td>Poor</td>
+<td>Slow</td>
+</tr>
+<tr>
+<td>SVM</td>
+<td>Very Slow</td>
+<td>Poor</td>
+<td>Very Slow</td>
+</tr>
+<tr>
+<td>Naive Bayes Classifier</td>
+<td>Fast</td>
+<td>Poor</td>
+<td>Fast</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
@@ -15059,10 +15123,23 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Recall-versus-True-Negative-Rate">Recall versus True Negative Rate<a class="anchor-link" href="#Recall-versus-True-Negative-Rate">&#182;</a></h2><ul>
+<li>High Recall &amp; Low True Negative Rate: Prioritizes company over customer</li>
+<li>Low Recall &amp; High True Negative Rate: Prioritizes customer over company</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Recommendations-for-Stakeholder">Recommendations for Stakeholder<a class="anchor-link" href="#Recommendations-for-Stakeholder">&#182;</a></h2><ul>
 <li>Provide better data documentation</li>
 <li>Educate employees in data acquisition</li>
-<li>Check meter number for manipulations</li>
 </ul>
 
 </div>
