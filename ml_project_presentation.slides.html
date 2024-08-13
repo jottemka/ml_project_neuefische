@@ -14654,9 +14654,9 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Case-Description">Case Description<a class="anchor-link" href="#Case-Description">&#182;</a></h2><p><img src="images/steg.jpg" width="300"/></p>
 <ul>
-<li>Tunisian Company of Electricity and Gas (STEG) delivers electricity and gas</li>
+<li>STEG delivers electricity and gas across Tunisia</li>
 <li>Suffered 65 million USD losses due to manipulated meters</li>
-<li>Goal: detect fraudulent and non-fraudulent clients to avoid financial and reputation damage</li>
+<li>Goal: detect fraudulent clients to avoid financial and reputation damage</li>
 </ul>
 
 </div>
@@ -15010,10 +15010,10 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Data-Challenges">Data Challenges<a class="anchor-link" href="#Data-Challenges">&#182;</a></h2><ol>
 <li>Poor data documentation</li>
-<li>Very large dataset: 4.4 million rows</li>
-<li>Highly imbalanced: only 7.8% fraud cases</li>
+<li>Large dataset: 4.4 million rows</li>
+<li>Highly imbalanced data: only 7.8% fraud cases</li>
 <li>Columns with mixed data-types and out-of-range values</li>
-<li>No data fraud-activities before 2005</li>
+<li>No data fraud documented before 2005</li>
 </ol>
 
 </div>
@@ -15028,77 +15028,65 @@ div.jp-OutputPrompt {
 <h2 id="Tested-Classifiers">Tested Classifiers<a class="anchor-link" href="#Tested-Classifiers">&#182;</a></h2><table>
 <thead><tr>
 <th><strong>Model</strong></th>
-<th><strong>Prediction Time</strong></th>
-<th><strong>Performance</strong></th>
-<th><strong>Computational Time</strong></th>
+<th><strong>Computation Time</strong></th>
+<th><strong>Model Performance</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>KNN</td>
-<td>Long</td>
+<td>Very Slow</td>
 <td>Good</td>
-<td>Okay</td>
 </tr>
 <tr>
 <td>Decision Trees</td>
-<td>Fast</td>
-<td>Excellent</td>
-<td>Good</td>
+<td>Relatively Fast</td>
+<td>Best</td>
 </tr>
 <tr>
 <td>Random Forests</td>
-<td>Okay</td>
+<td>Fast</td>
 <td>Good</td>
-<td>Okay</td>
 </tr>
 <tr>
 <td>Extra Trees</td>
-<td>Okay</td>
-<td>Average</td>
 <td>Fast</td>
+<td>Average</td>
 </tr>
 <tr>
 <td>K-Means</td>
 <td>Fast</td>
 <td>Poor</td>
-<td>Fast</td>
 </tr>
 <tr>
 <td>LightGBM</td>
 <td>Fast</td>
 <td>Poor</td>
-<td>Fast</td>
 </tr>
 <tr>
 <td>XGBoost</td>
 <td>Fast</td>
 <td>Poor</td>
-<td>Fast</td>
 </tr>
 <tr>
 <td>Logistic Regression</td>
 <td>Fast</td>
 <td>Poor</td>
-<td>Fast</td>
 </tr>
 <tr>
 <td>AdaBoost</td>
 <td>Slow</td>
 <td>Poor</td>
-<td>Slow</td>
 </tr>
 <tr>
 <td>SVM</td>
 <td>Very Slow</td>
 <td>Poor</td>
-<td>Very Slow</td>
 </tr>
 <tr>
 <td>Naive Bayes Classifier</td>
 <td>Fast</td>
 <td>Poor</td>
-<td>Fast</td>
 </tr>
 </tbody>
 </table>
@@ -15112,7 +15100,11 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Fraud-Detector-Performance">Fraud Detector Performance<a class="anchor-link" href="#Fraud-Detector-Performance">&#182;</a></h2><p><img src="images/confusion_matrix_knn.png" alt="alt text"></p>
+<h2 id="Final-Model-Evaluation">Final Model Evaluation<a class="anchor-link" href="#Final-Model-Evaluation">&#182;</a></h2><ul>
+<li>Best Model: Single Decision Tree </li>
+<li>Most important features: old_index, new_index, creation_date, invoice_date, counter_code, region</li>
+<li>Evaluation Metrics: ROC-AUC 0.82, Recall: 0.67, TNR: 0.97</li>
+</ul>
 
 </div>
 </div>
@@ -15123,9 +15115,44 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Recall-versus-True-Negative-Rate">Recall versus True Negative Rate<a class="anchor-link" href="#Recall-versus-True-Negative-Rate">&#182;</a></h2><ul>
-<li>High Recall &amp; Low True Negative Rate: Prioritizes company over customer</li>
-<li>Low Recall &amp; High True Negative Rate: Prioritizes customer over company</li>
+<h2 id="Fraud-Detector-Performance">Fraud Detector Performance<a class="anchor-link" href="#Fraud-Detector-Performance">&#182;</a></h2><p><img src="images/confusion_matrix_tree.png" width="400"/></p>
+<table>
+<thead><tr>
+<th></th>
+<th>Low TNR</th>
+<th>High TNR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Low Recall</td>
+<td>Bad for customers and company</td>
+<td>Good for customers, bad for company</td>
+</tr>
+<tr>
+<td>High Recall</td>
+<td>Bad for customers, good for company</td>
+<td>Good for customers, good for company</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Optimization-Attempts">Optimization Attempts<a class="anchor-link" href="#Optimization-Attempts">&#182;</a></h2><ul>
+<li>Random search: pruning</li>
+<li>One-hot encoding</li>
+<li>Feature selection</li>
+<li>Dropping redundant or correlated features</li>
+<li>Over- and undersampling</li>
+<li>Feature engineering: over or under-consumption, long-term customership</li>
 </ul>
 
 </div>
@@ -15139,7 +15166,38 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Recommendations-for-Stakeholder">Recommendations for Stakeholder<a class="anchor-link" href="#Recommendations-for-Stakeholder">&#182;</a></h2><ul>
 <li>Provide better data documentation</li>
-<li>Educate employees in data acquisition</li>
+<li>Educate employees in data acquisition and generation</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Insights">Insights<a class="anchor-link" href="#Insights">&#182;</a></h2><p><img src="images/consumption1.png" width="400"/>
+<img src="images/consumption2.png" width="400"/></p>
+<ul>
+<li>On average, fraudsters consume more energy</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Future-Work">Future Work<a class="anchor-link" href="#Future-Work">&#182;</a></h2><ul>
+<li>Threshold fine-tuning</li>
+<li>Stacking</li>
+<li>Deeper EDA</li>
+<li>Submit to Zindi</li>
 </ul>
 
 </div>
