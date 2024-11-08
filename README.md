@@ -60,14 +60,6 @@ Excluded models due to long processing time or excessive effort:
 
 ## Cross Validation
 
-
-<div><style>
-.dataframe > thead > tr,
-.dataframe > tbody > tr {
-  text-align: right;
-  white-space: pre-wrap;
-}
-</style>
 <table border="1" class="dataframe"><thead><tr><th>Model</th><th>ROC-AUC</th><th>True Positive Rate</th><th>True Negative Rate</th><th>min_samples_split</th><th>min_samples_leaf</th><th>max_depth</th><th>criterion</th><th>n_jobs</th><th>n_estimators</th><th>min_child_weight</th><th>learning_rate</th></tr></thead><tbody><tr><td>&quot;DecisionTree&quot;</td><td>0.863855</td><td>0.806765</td><td>0.797137</td><td>16</td><td>1</td><td>46</td><td>&quot;gini&quot;</td><td>null</td><td>null</td><td>null</td><td>null</td></tr><tr><td>&quot;RandomForest&quot;</td><td>0.847049</td><td>0.772724</td><td>0.750683</td><td>10</td><td>1</td><td>26</td><td>null</td><td>-1</td><td>225</td><td>null</td><td>null</td></tr><tr><td>&quot;ExtraTrees&quot;</td><td>0.793471</td><td>0.716113</td><td>0.708899</td><td>19</td><td>1</td><td>26</td><td>&quot;entropy&quot;</td><td>-1</td><td>225</td><td>null</td><td>null</td></tr><tr><td>&quot;XGBoost&quot;</td><td>0.888584</td><td>0.829137</td><td>0.778349</td><td>null</td><td>null</td><td>11</td><td>null</td><td>-1</td><td>441</td><td>1</td><td>0.406</td></tr></tbody></table></div>
 
 
